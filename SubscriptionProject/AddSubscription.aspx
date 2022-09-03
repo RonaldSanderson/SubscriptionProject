@@ -9,6 +9,7 @@
                 Subscription Name:
                 <br />
                 <asp:TextBox ID="SubscriptionNameTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldSubscriptionName" runat="server" CssClass="Required" ControlToValidate="SubscriptionNameTextBox" ErrorMessage="<br />Subscription Name is required."></asp:RequiredFieldValidator>
             </td>
             <td>
                 Purchase Date:
@@ -42,7 +43,7 @@
         &nbsp;
         &nbsp;
         &nbsp;
-        <asp:Button ID="CancelButton" runat="server" Text="Cancel" OnClick="CancelButton_Click" />
+        <asp:Button ID="CancelButton" runat="server" Text="Cancel" OnClick="CancelButton_Click" CausesValidation="false" />
         <br />
         <asp:Label ID="SuccessLabel" runat="server" Visible="false">Saved Succesfully!</asp:Label>
     </p>
