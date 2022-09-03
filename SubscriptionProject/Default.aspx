@@ -45,7 +45,7 @@
                 Track your software subscriptions.
             </p>
             <p>
-                <a class="btn btn-default" href="Test.aspx" >Enter! &raquo;</a>
+                <a class="btn btn-default" href="AddSubscription.aspx" >Enter! &raquo;</a>
             </p>
         </div>
     </div>

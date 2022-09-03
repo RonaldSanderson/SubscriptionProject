@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace SubscriptionProject
 {
-    public partial class Test : System.Web.UI.Page
+    public partial class AddSubscription : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,10 +31,13 @@ namespace SubscriptionProject
             //Opens the new connection
             newConn.Open();
             //Creates the command for the insert statement
-            SqlCommand commandSubscription = new SqlCommand("INSERT INTO dbo.Subscription (SubscriptionName) "
-            + "VALUES (@SubscriptionName)", newConn);
+            SqlCommand commandSubscription = new SqlCommand("INSERT INTO dbo.Subscription (SubscriptionName, DatePurchased, SubscriptionType, SubscriptionCost) "
+            + "VALUES (@SubscriptionName, @DatePurchased, @SubscriptionType, @SubscriptionCost)", newConn);
             //Inserting textbox value into the parameter: this is for security purposes to avoid SQL injection
-            commandSubscription.Parameters.AddWithValue("@SubscriptionName", this.SubscriptionNameTextbox.Text);
+            commandSubscription.Parameters.AddWithValue("@SubscriptionName", this.SubscriptionNameTextBox.Text);
+            commandSubscription.Parameters.AddWithValue("@DatePurchased", this.PurchaseDateTextBox.Text);
+            commandSubscription.Parameters.AddWithValue("@SubscriptionType", this.SubscriptionTypeTextBox.SelectedItem.Text);
+            commandSubscription.Parameters.AddWithValue("@SubscriptionCost", this.SubscriptionCostTextBox.Text);
             //Creates the command adaptor
             SqlDataAdapter adapterSubscription = new SqlDataAdapter();
             //Sets up the insert command
@@ -45,6 +48,10 @@ namespace SubscriptionProject
             newConn.Close();
             //Shows a message to a user
             this.SuccessLabel.Visible = true;
+        }
+
+        protected void CancelButton_Click(object sender, EventArgs e)
+        {
 
         }
     }
