@@ -36,7 +36,7 @@ namespace SubscriptionProject
             //Inserting textbox value into the parameter: this is for security purposes to avoid SQL injection
             commandSubscription.Parameters.AddWithValue("@SubscriptionName", this.SubscriptionNameTextBox.Text);
             commandSubscription.Parameters.AddWithValue("@DatePurchased", this.PurchaseDateTextBox.Text);
-            commandSubscription.Parameters.AddWithValue("@SubscriptionType", this.SubscriptionTypeTextBox.SelectedItem.Text);
+            commandSubscription.Parameters.AddWithValue("@SubscriptionType", this.SubscriptionTypeDropDownList.SelectedItem.Text);
             commandSubscription.Parameters.AddWithValue("@SubscriptionCost", this.SubscriptionCostTextBox.Text);
             //Creates the command adaptor
             SqlDataAdapter adapterSubscription = new SqlDataAdapter();

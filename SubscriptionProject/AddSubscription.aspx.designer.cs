@@ -42,13 +42,31 @@ namespace SubscriptionProject
         protected global::System.Web.UI.WebControls.TextBox PurchaseDateTextBox;
 
         /// <summary>
-        /// SubscriptionTypeTextBox control.
+        /// RequiredFieldPurchaseDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SubscriptionTypeTextBox;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldPurchaseDate;
+
+        /// <summary>
+        /// SubscriptionTypeDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SubscriptionTypeDropDownList;
+
+        /// <summary>
+        /// RequiredFieldSubscriptionType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldSubscriptionType;
 
         /// <summary>
         /// SubscriptionCostTextBox control.
@@ -58,6 +76,15 @@ namespace SubscriptionProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox SubscriptionCostTextBox;
+
+        /// <summary>
+        /// RequiredFieldSubscriptionCost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldSubscriptionCost;
 
         /// <summary>
         /// SaveButton control.

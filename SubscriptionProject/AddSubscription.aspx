@@ -15,22 +15,25 @@
                 Purchase Date:
                 <br />
                 <asp:TextBox ID="PurchaseDateTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldPurchaseDate" runat="server" CssClass="Required" ControlToValidate="PurchaseDateTextBox" ErrorMessage="<br />Purchase Date is required."></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td style ="padding-right:20px;">
                 Subscription Type:
                 <br />
-                <asp:DropDownList ID="SubscriptionTypeTextBox" runat="server" Width ="180px">
+                <asp:DropDownList ID="SubscriptionTypeDropDownList" runat="server" Width ="180px">
                     <asp:ListItem>Select Type:</asp:ListItem>
                     <asp:ListItem>Monthly</asp:ListItem>
                     <asp:ListItem>Yearly</asp:ListItem>
                 </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="RequiredFieldSubscriptionType" runat="server" InitialValue="Select Type:" CssClass="Required" ControlToValidate="SubscriptionTypeDropDownList" ErrorMessage="<br />Please select a Subscription Type."></asp:RequiredFieldValidator>
             </td>
             <td>
                 Subscription Cost:
                 <br />
                 <asp:TextBox ID="SubscriptionCostTextBox" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldSubscriptionCost" runat="server" CssClass="Required" ControlToValidate="SubscriptionCostTextBox" ErrorMessage="<br />Subscription Cost is required."></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
