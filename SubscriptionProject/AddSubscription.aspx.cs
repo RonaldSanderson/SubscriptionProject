@@ -22,6 +22,7 @@ namespace SubscriptionProject
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
+            DateTime dateEntered = System.DateTime.Now;
             //Tells button to use Sql server
             AppDomain.CurrentDomain.SetData("SQLServerCompactEditionUnderWebHosting", true);
             //Names the connection string and tells the button which connection string to use
@@ -31,13 +32,14 @@ namespace SubscriptionProject
             //Opens the new connection
             newConn.Open();
             //Creates the command for the insert statement
-            SqlCommand commandSubscription = new SqlCommand("INSERT INTO dbo.Subscription (SubscriptionName, DatePurchased, SubscriptionType, SubscriptionCost) "
-            + "VALUES (@SubscriptionName, @DatePurchased, @SubscriptionType, @SubscriptionCost)", newConn);
+            SqlCommand commandSubscription = new SqlCommand("INSERT INTO dbo.Subscription (SubscriptionName, DatePurchased, SubscriptionType, SubscriptionCost, DateAdded) "
+            + "VALUES (@SubscriptionName, @DatePurchased, @SubscriptionType, @SubscriptionCost, @DateAdded)", newConn);
             //Inserting textbox value into the parameter: this is for security purposes to avoid SQL injection
             commandSubscription.Parameters.AddWithValue("@SubscriptionName", this.SubscriptionNameTextBox.Text);
             commandSubscription.Parameters.AddWithValue("@DatePurchased", this.PurchaseDateTextBox.Text);
             commandSubscription.Parameters.AddWithValue("@SubscriptionType", this.SubscriptionTypeDropDownList.SelectedItem.Text);
             commandSubscription.Parameters.AddWithValue("@SubscriptionCost", this.SubscriptionCostTextBox.Text);
+            commandSubscription.Parameters.AddWithValue("@DateAdded", dateEntered);
             //Creates the command adaptor
             SqlDataAdapter adapterSubscription = new SqlDataAdapter();
             //Sets up the insert command
