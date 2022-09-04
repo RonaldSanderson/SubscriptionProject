@@ -50,6 +50,6 @@
         &nbsp;
         <asp:Button ID="CancelButton" runat="server" Text="Cancel" OnClick="CancelButton_Click" CausesValidation="false" />
         <br />
-        <asp:Label ID="SuccessLabel" runat="server" Visible="false">Saved Succesfully!</asp:Label>
+        <asp:Label ID="SuccessLabel" runat="server" CssClass="Correct" Visible="false"><br />Saved Successfully!</asp:Label>
     </p>
 </asp:Content>
