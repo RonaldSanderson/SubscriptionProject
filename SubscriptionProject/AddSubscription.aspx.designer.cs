@@ -51,6 +51,15 @@ namespace SubscriptionProject
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldPurchaseDate;
 
         /// <summary>
+        /// CompareValidatorPurchaseDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorPurchaseDate;
+
+        /// <summary>
         /// SubscriptionTypeDropDownList control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace SubscriptionProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldSubscriptionCost;
+
+        /// <summary>
+        /// CompareValidatorSubscriptionCost control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorSubscriptionCost;
 
         /// <summary>
         /// SaveButton control.
