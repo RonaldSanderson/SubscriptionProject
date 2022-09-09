@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddSubscription.aspx.cs" Inherits="SubscriptionProject.AddSubscription" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditSubscription.aspx.cs" Inherits="SubscriptionProject.EditSubscription" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <h2>Subscription Tracker Application</h2>
     <br />
-    <h2>Add Subscription</h2>
+    <h2>Edit Subscription</h2>
     <br />
     <table>
         <tr>
@@ -44,7 +44,7 @@
     <p>
         <br />
         <br />
-        <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="SaveButton_Click" />
+        <asp:Button ID="SaveButton" runat="server" Text="Save Changes" OnClick="SaveButton_Click" />
         &nbsp;
         &nbsp;
         &nbsp;
