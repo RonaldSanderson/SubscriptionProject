@@ -14,12 +14,12 @@
         <asp:TextBox ID="PasswordTextBox" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="LoginButton" runat="server" Text="Login" />
+        <asp:Button ID="LoginButton" runat="server" Text="Login"  OnClick="LoginButton_Click"/>
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
         &nbsp;
-        <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account" />
+        <asp:Button ID="CreateAccountButton" runat="server" Text="Create Account"  OnClick="CreateAccountButton_Click"/>
     </div>
 </asp:Content>
