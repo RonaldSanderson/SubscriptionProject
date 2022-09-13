@@ -24,13 +24,13 @@ namespace SubscriptionProject
         protected global::System.Web.UI.WebControls.Label UsernameLabel;
 
         /// <summary>
-        /// UsernameTextBox control.
+        /// UserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox UsernameTextBox;
+        protected global::System.Web.UI.WebControls.TextBox UserName;
 
         /// <summary>
         /// PasswordLabel control.
@@ -42,13 +42,13 @@ namespace SubscriptionProject
         protected global::System.Web.UI.WebControls.Label PasswordLabel;
 
         /// <summary>
-        /// PasswordTextBox control.
+        /// Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PasswordTextBox;
+        protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
         /// LoginButton control.
@@ -67,5 +67,14 @@ namespace SubscriptionProject
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button CreateAccountButton;
+
+        /// <summary>
+        /// StatusLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label StatusLabel;
     }
 }

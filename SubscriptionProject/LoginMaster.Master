@@ -52,6 +52,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <%--<li><a runat="server" href="~/">Home</a></li>--%>
+                        <%--<asp:Button ID="LogoutButton" runat="server" Text="Logout" OnClick="LogoutButton_Click" />--%>
                     </ul>
                 </div>
             </div>

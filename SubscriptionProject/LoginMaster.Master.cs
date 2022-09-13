@@ -13,5 +13,12 @@ namespace SubscriptionProject
         {
 
         }
+
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            authenticationManager.SignOut();
+            Response.Redirect("~/LoginPage.aspx");
+        }
     }
 }
