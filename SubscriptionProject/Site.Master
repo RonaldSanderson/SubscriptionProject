@@ -52,7 +52,7 @@
                                 <a class="navbar-brand" runat="server" href="~/">Subscription Tracker</a>
                             </td>
                             <td>
-                                <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="LogoutButton_Click" />
+                                <asp:Button ID="LogoutButton" runat="server" Text="Logout" OnClick="LogoutButton_Click" CausesValidation="false" />
                             </td>
                         </tr>
                     </table>
