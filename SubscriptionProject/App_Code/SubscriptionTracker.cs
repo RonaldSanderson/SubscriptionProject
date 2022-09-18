@@ -19,7 +19,7 @@ namespace SubscriptionProject.App_Code
 
             connection.Open();
 
-            SqlCommand command = new SqlCommand("SELECT SubscriptionName, DatePurchased, SubscriptionType, SubscriptionCost "
+            SqlCommand command = new SqlCommand("SELECT SubscriptionID, SubscriptionName, DatePurchased, SubscriptionType, SubscriptionCost "
                 + "FROM dbo.Subscription "
                 + "WHERE CreatedBy = @CreatedBy "
                 + "ORDER BY SubscriptionName", connection);

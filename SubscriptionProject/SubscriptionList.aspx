@@ -3,16 +3,17 @@
     <br />
     <h2>Subscription List</h2>
     <br />
-    <asp:GridView ID="ListGrid" runat="server" EmptyDataText="No Subscriptions to Display" DataSourceID="ObjectDataSourceSubscriptions" AutoGenerateColumns="false">
+    <asp:GridView ID="ListGrid" runat="server" EmptyDataText="No Subscriptions to Display" DataSourceID="ObjectDataSourceSubscriptions" AutoGenerateColumns="false" OnRowCommand="ListGrid_RowCommand">
         <Columns>
             <asp:TemplateField HeaderText="Edit">
                 <ItemTemplate>
-                    <asp:Button ID="EditButton" runat="server" Text="Edit"  OnClick="EditButton_Click"/>
+                    <asp:Button ID="EditButton" runat="server" Text="Edit" CommandName ="EditSubscription"/>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Name">
                 <ItemTemplate>
                     <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("SubscriptionName") %>'></asp:Label>
+                    <asp:Label ID="SubscriptionIDLabel" runat="server" Text='<%# Eval("SubscriptionID") %>' Visible="false"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Purchase Date">
