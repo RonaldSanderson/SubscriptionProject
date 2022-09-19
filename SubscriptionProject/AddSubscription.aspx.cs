@@ -32,14 +32,15 @@ namespace SubscriptionProject
             //Opens the new connection
             newConn.Open();
             //Creates the command for the insert statement
-            SqlCommand commandSubscription = new SqlCommand("INSERT INTO dbo.Subscription (SubscriptionName, DatePurchased, SubscriptionType, SubscriptionCost, DateAdded) "
-            + "VALUES (@SubscriptionName, @DatePurchased, @SubscriptionType, @SubscriptionCost, @DateAdded)", newConn);
+            SqlCommand commandSubscription = new SqlCommand("INSERT INTO dbo.Subscription (SubscriptionName, DatePurchased, SubscriptionType, SubscriptionCost, DateAdded, CreatedBy) "
+            + "VALUES (@SubscriptionName, @DatePurchased, @SubscriptionType, @SubscriptionCost, @DateAdded, @CreatedBy)", newConn);
             //Inserting textbox value into the parameter: this is for security purposes to avoid SQL injection
             commandSubscription.Parameters.AddWithValue("@SubscriptionName", this.SubscriptionNameTextBox.Text);
             commandSubscription.Parameters.AddWithValue("@DatePurchased", this.PurchaseDateTextBox.Text);
             commandSubscription.Parameters.AddWithValue("@SubscriptionType", this.SubscriptionTypeDropDownList.SelectedItem.Text);
             commandSubscription.Parameters.AddWithValue("@SubscriptionCost", this.SubscriptionCostTextBox.Text);
             commandSubscription.Parameters.AddWithValue("@DateAdded", dateEntered);
+            commandSubscription.Parameters.AddWithValue("@CreatedBy", User.Identity.Name);
             //Creates the command adaptor
             SqlDataAdapter adapterSubscription = new SqlDataAdapter();
             //Sets up the insert command
@@ -54,7 +55,7 @@ namespace SubscriptionProject
 
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Default.aspx");
+            Response.Redirect("~/SubscriptionList.aspx");
         }
     }
 }

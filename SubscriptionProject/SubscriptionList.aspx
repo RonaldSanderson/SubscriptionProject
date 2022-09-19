@@ -3,6 +3,8 @@
     <br />
     <h2>Subscription List</h2>
     <br />
+    <asp:Button ID="AddSubscriptionButton" runat="server" Text="Add Subscription" OnClick="AddSubscriptionButton_Click" />
+    <br />
     <asp:GridView ID="ListGrid" runat="server" EmptyDataText="No Subscriptions to Display" DataSourceID="ObjectDataSourceSubscriptions" AutoGenerateColumns="false">
         <Columns>
             <asp:TemplateField HeaderText="Edit">

@@ -34,5 +34,10 @@ namespace SubscriptionProject
                 }
             }
         }
+
+        protected void AddSubscriptionButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AddSubscription.aspx");
+        }
     }
 }
