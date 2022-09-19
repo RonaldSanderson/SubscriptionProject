@@ -5,18 +5,20 @@
     <br />
     <h2>Edit Subscription</h2>
     <br />
-    <table>
+    <asp:FormView ID="SubscriptionFormView" runat="server" DataSourceID="ObjectDataSourceSubscription" DefaultMode="Edit">
+        <EditItemTemplate>
+            <table>
         <tr>
             <td style ="padding-right:20px;">
                 Subscription Name:
                 <br />
-                <asp:TextBox ID="SubscriptionNameTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="SubscriptionNameTextBox" runat="server" Text='<%# Bind("SubscriptionName") %>'></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldSubscriptionName" runat="server" Display="Dynamic" CssClass="Required" ControlToValidate="SubscriptionNameTextBox" ErrorMessage="<br />Subscription Name is required."></asp:RequiredFieldValidator>
             </td>
             <td>
                 Purchase Date:
                 <br />
-                <asp:TextBox ID="PurchaseDateTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="PurchaseDateTextBox" runat="server" Text='<%# Bind("DatePurchased", "{0:MM/dd/yyyy}") %>'></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldPurchaseDate" runat="server" Display="Dynamic" CssClass="Required" ControlToValidate="PurchaseDateTextBox" ErrorMessage="<br />Purchase Date is required."></asp:RequiredFieldValidator>
                 <asp:CompareValidator ID="CompareValidatorPurchaseDate" runat="server" Display="Dynamic" Type="Date" Operator="DataTypeCheck" CssClass="Required" ControlToValidate="PurchaseDateTextBox" ErrorMessage="<br />Please enter a valid date."></asp:CompareValidator>
             </td>
@@ -25,7 +27,7 @@
             <td style ="padding-right:20px;">
                 Subscription Type:
                 <br />
-                <asp:DropDownList ID="SubscriptionTypeDropDownList" runat="server" Width ="180px">
+                <asp:DropDownList ID="SubscriptionTypeDropDownList" runat="server" Width ="180px" SelectedValue ='<%# Bind("SubscriptionType") %>'>
                     <asp:ListItem>Select Type:</asp:ListItem>
                     <asp:ListItem>Monthly</asp:ListItem>
                     <asp:ListItem>Yearly</asp:ListItem>
@@ -35,7 +37,7 @@
             <td>
                 Subscription Cost:
                 <br />
-                <asp:TextBox ID="SubscriptionCostTextBox" runat="server"></asp:TextBox>
+                <asp:TextBox ID="SubscriptionCostTextBox" runat="server" Text='<%# Bind("SubscriptionCost") %>'></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldSubscriptionCost" runat="server" Display="Dynamic" CssClass="Required" ControlToValidate="SubscriptionCostTextBox" ErrorMessage="<br />Subscription Cost is required."></asp:RequiredFieldValidator>
                 <asp:CompareValidator ID="CompareValidatorSubscriptionCost" runat="server" Display="Dynamic" Type="Double" Operator="DataTypeCheck" CssClass="Required" ControlToValidate="SubscriptionCostTextBox" ErrorMessage="<br />Please enter a valid cost."></asp:CompareValidator>
             </td>
@@ -51,7 +53,10 @@
         &nbsp;
         &nbsp;
         <asp:Button ID="CancelButton" runat="server" Text="Cancel" OnClick="CancelButton_Click" CausesValidation="false" />
-        <br />
-        <asp:Label ID="SuccessLabel" runat="server" CssClass="Correct" Visible="false"><br />Saved Successfully!</asp:Label>
     </p>
+        </EditItemTemplate>
+    </asp:FormView>
+    <br />
+        <asp:Label ID="SuccessLabel" runat="server" CssClass="Correct" Visible="false"><br />Saved Successfully!</asp:Label>
+        <asp:ObjectDataSource ID="ObjectDataSourceSubscription" runat="server" SelectMethod="GetSubscription" UpdateMethod="SaveSubscription" TypeName="SubscriptionProject.App_Code.SubscriptionTracker"></asp:ObjectDataSource>
 </asp:Content>

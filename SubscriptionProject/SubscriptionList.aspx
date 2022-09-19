@@ -3,11 +3,13 @@
     <br />
     <h2>Subscription List</h2>
     <br />
-    <asp:GridView ID="ListGrid" runat="server" EmptyDataText="No Subscriptions to Display" DataSourceID="ObjectDataSourceSubscriptions" AutoGenerateColumns="false" OnRowCommand="ListGrid_RowCommand">
+    <asp:GridView ID="ListGrid" runat="server" EmptyDataText="No Subscriptions to Display" DataSourceID="ObjectDataSourceSubscriptions" AutoGenerateColumns="false">
         <Columns>
             <asp:TemplateField HeaderText="Edit">
                 <ItemTemplate>
-                    <asp:Button ID="EditButton" runat="server" Text="Edit" CommandName ="EditSubscription"/>
+                    <asp:Panel ID="Panel1" runat="server">
+                        <asp:Button ID="EditButton" runat="server" Text="Edit" CommandArgument ="EditSubscription" OnCommand="EditButton_Command"/>
+                    </asp:Panel>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Name">

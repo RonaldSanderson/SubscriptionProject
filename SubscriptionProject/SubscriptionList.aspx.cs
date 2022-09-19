@@ -14,20 +14,25 @@ namespace SubscriptionProject
 
         }
 
-        protected void ListGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void EditButton_Command(object sender, CommandEventArgs e)
         {
-            if(e.CommandName == "EditSubscription")
+            Panel selectedRow = (Panel)((Button)sender).Parent;
+            Label subscriptionIDLabel = (Label)selectedRow.FindControl("SubscriptionIDLabel");
+            int subscriptionID;
+
+            if(Int32.TryParse(subscriptionIDLabel.Text, out subscriptionID))
             {
-                GridViewRow row = (GridViewRow)(((Button)e.CommandSource).NamingContainer);
-                SessionService.SubscriptionID = row.FindControl("SubscriptionIDLabel").ToString();
-                Response.Redirect("~/EditSubscription.aspx");
+                SessionService.SubscriptionID = subscriptionID;
+
+                switch(e.CommandArgument.ToString())
+                {
+                    case "EditSubscription":
+                        Response.Redirect("~/EditSubscription.aspx");
+                        break;
+                    default:
+                        break;
+                }
             }
-
         }
-
-        //protected void EditButton_Click(object sender, EventArgs e)
-        //{
-        //    Response.Redirect("~/EditSubscription.aspx");
-        //}
     }
 }
