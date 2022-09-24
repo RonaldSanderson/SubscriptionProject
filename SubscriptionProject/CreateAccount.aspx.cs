@@ -56,6 +56,7 @@ namespace SubscriptionProject
                 this.SuccessLabel.Visible = true;
                 this.StatusLabel.Visible = false;
                 SuccessLabel.Text = string.Format("User {0} was created successfully!", user.UserName);
+                Response.Redirect("~/LoginPage.aspx");
             }
             else
             {

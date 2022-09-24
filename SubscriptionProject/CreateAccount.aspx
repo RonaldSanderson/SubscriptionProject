@@ -67,7 +67,7 @@
         &nbsp;
         &nbsp;
         &nbsp;
-        <asp:Button ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click" CausesValidation="false"/>
+        <asp:Button ID="LoginButton" runat="server" Text="Cancel" OnClick="LoginButton_Click" CausesValidation="false"/>
         <br />
         <asp:Label ID="StatusLabel" runat="server" CssClass="Required" Visible="false"> 
         </asp:Label>
