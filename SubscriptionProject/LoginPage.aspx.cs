@@ -15,14 +15,7 @@ namespace SubscriptionProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (User.Identity.IsAuthenticated)
-                {
-                    StatusLabel.Text = string.Format("Hello {0}!!", User.Identity.GetUserName());
-                    StatusLabel.Visible = true;
-                }
-            }
+            
         }
 
         protected void CreateAccountButton_Click(object sender, EventArgs e)
