@@ -37,6 +37,7 @@ namespace SubscriptionProject
 
             //Shows a message to a user
             this.SuccessLabel.Visible = true;
+            Response.Redirect("~/SubscriptionList.aspx");
         }
 
         protected void CancelButton_Click(object sender, EventArgs e)
